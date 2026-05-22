@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 29th, Ejean 🌹</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #fdf8f2;
+    --warm-white: #fefcf8;
+    --dusty-rose: #c9857a;
+    --deep-rose: #8b3a3a;
+    --blush: #f0d4cc;
+    --blush-light: #faeae4;
+    --gold: #b8945a;
+    --dark: #2a1a14;
+    --mid: #7a5a4a;
+    --muted: #b09080;
+    --cursive: 'Great Vibes', cursive;
+    --serif: 'Cormorant Garamond', serif;
+    --sans: 'Instrument Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--dark); font-family: var(--serif); overflow-x: hidden; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 3rem 2rem;
+    position: relative; background: var(--warm-white); overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 20% 30%, rgba(201,133,122,0.10) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 60% at 80% 70%, rgba(184,148,90,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .petal-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .petal {
+    position: absolute; width: 6px; height: 10px;
+    background: var(--blush); border-radius: 50% 50% 50% 0;
+    opacity: 0; animation: fall linear infinite;
+  }
+  @keyframes fall {
+    0%   { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+    10%  { opacity: 0.6; }
+    90%  { opacity: 0.3; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+  }
+  .hero-eyebrow {
+    font-family: var(--sans); font-size: 10px; letter-spacing: 0.35em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem;
+    opacity: 0; animation: fadeUp 0.8s 0.3s forwards;
+  }
+  .hero-title {
+    font-family: var(--cursive);
+    font-size: clamp(64px, 14vw, 118px);
+    font-weight: 400; line-height: 1.1;
+    color: var(--dark); margin-bottom: 0.3rem;
+    opacity: 0; animation: fadeUp 0.9s 0.5s forwards;
+  }
+  .hero-title span { color: var(--dusty-rose); }
+  .hero-age {
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.4em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 2.5rem;
+    opacity: 0; animation: fadeUp 0.9s 0.7s forwards;
+  }
+  .hero-message {
+    max-width: 440px; font-size: 18px; font-style: italic;
+    color: var(--mid); line-height: 1.8; margin-bottom: 3rem;
+    opacity: 0; animation: fadeUp 0.9s 0.9s forwards;
+  }
+  .scroll-cue {
+    font-family: var(--sans); font-size: 9px; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--muted);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    opacity: 0; animation: fadeUp 0.9s 1.2s forwards; cursor: pointer;
+  }
+  .scroll-cue::after {
+    content: ''; width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION SHARED ── */
+  .section-wrap { padding: 6rem 2rem; max-width: 960px; margin: 0 auto; }
+  .section-eyebrow {
+    font-family: var(--sans); font-size: 9px; letter-spacing: 0.4em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: var(--cursive);
+    font-size: clamp(40px, 6vw, 62px);
+    color: var(--dark); margin-bottom: 3rem; line-height: 1.2;
+  }
+
+  /* ── YEAR TABS ── */
+  .tabs-nav {
+    display: flex; gap: 0; flex-wrap: wrap;
+    border-bottom: 1px solid #e0cfc0; margin-bottom: 2.5rem;
+  }
+  .tab-btn {
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted);
+    background: none; border: none; cursor: pointer;
+    padding: 10px 20px 12px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.25s, border-color 0.25s;
+    position: relative;
+  }
+  .tab-btn:hover { color: var(--mid); }
+  .tab-btn.active { color: var(--deep-rose); border-bottom-color: var(--deep-rose); }
+  /* Special "And Beyond" tab styling */
+  .tab-btn.special {
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+  .tab-btn.special.active { color: var(--deep-rose); border-bottom-color: var(--deep-rose); }
+
+  /* ── TAB PANEL TRANSITIONS ── */
+  .panels-container { position: relative; }
+  .tab-panel {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    pointer-events: none;
+  }
+  .tab-panel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+                visibility 0s linear 0s;
+    position: relative;
+    pointer-events: auto;
+  }
+
+  /* ── SHIMMER on tab switch ── */
+  .tab-shimmer {
+    position: fixed; inset: 0; z-index: 50; pointer-events: none;
+    background: radial-gradient(ellipse at 50% 40%, rgba(201,133,122,0.18) 0%, transparent 70%);
+    opacity: 0; animation: shimmerFlash 0.5s ease-out forwards;
+  }
+  @keyframes shimmerFlash {
+    0%   { opacity: 0; }
+    30%  { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  /* Sparkle burst */
+  .sparkle {
+    position: fixed; pointer-events: none; z-index: 60;
+    font-size: 18px; animation: sparkleFly 0.7s ease-out forwards;
+  }
+  @keyframes sparkleFly {
+    0%   { opacity: 1; transform: translate(0,0) scale(1); }
+    100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0.3); }
+  }
+
+  .memories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  .memory-card { position: relative; overflow: hidden; border-radius: 4px; cursor: pointer; }
+  .memory-card:nth-child(3n+2) { margin-top: 1.5rem; }
+  .memory-card:nth-child(5n+4) { margin-top: -0.8rem; }
+  .memory-img-wrap {
+    aspect-ratio: 3/4;
+    background: var(--blush-light); border: 1px dashed var(--blush);
+    border-radius: 4px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+    transition: transform 0.4s ease; overflow: hidden; position: relative;
+  }
+  .memory-card:hover .memory-img-wrap { transform: scale(1.02); }
+  .memory-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    position: absolute; inset: 0; border-radius: 4px;
+  }
+  .placeholder-icon { font-size: 26px; opacity: 0.3; }
+  .placeholder-hint {
+    font-family: var(--sans); font-size: 9px; letter-spacing: 0.15em;
+    color: var(--muted); text-transform: uppercase;
+  }
+  .memory-caption { padding: 0.7rem 0 0; }
+  .memory-caption .label { font-size: 14px; font-style: italic; color: var(--mid); }
+
+  /* ── "AND BEYOND" special panel ── */
+  .beyond-panel {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+  }
+  .beyond-icon {
+    font-size: 48px; margin-bottom: 1.5rem;
+    animation: floatIcon 3s ease-in-out infinite;
+  }
+  @keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .beyond-title {
+    font-family: var(--cursive); font-size: clamp(32px, 5vw, 50px);
+    color: var(--dusty-rose); margin-bottom: 1.5rem; line-height: 1.2;
+  }
+  .beyond-message {
+    max-width: 560px; margin: 0 auto;
+    font-size: 18px; font-style: italic; color: var(--mid);
+    line-height: 2; border-left: 2px solid var(--blush);
+    padding-left: 1.8rem; text-align: left;
+  }
+  .beyond-signature {
+    margin-top: 2rem;
+    font-family: var(--cursive); font-size: 32px;
+    color: var(--dusty-rose);
+  }
+
+  /* ── DIVIDER ── */
+  .ornament-divider {
+    display: flex; align-items: center; gap: 1.5rem;
+    max-width: 960px; margin: 0 auto; padding: 0 2rem; opacity: 0.35;
+  }
+  .ornament-divider::before, .ornament-divider::after {
+    content: ''; flex: 1; height: 0.5px; background: var(--gold);
+  }
+  .ornament-divider span { font-size: 18px; color: var(--dusty-rose); }
+
+  /* ── WHEEL SECTION ── */
+  #gift { text-align: center; }
+  .gift-intro {
+    font-size: 18px; font-style: italic; color: var(--mid);
+    max-width: 420px; margin: 0 auto 3rem; line-height: 1.8;
+  }
+  .wheel-container { position: relative; display: inline-block; margin-bottom: 2.5rem; }
+  .wheel-pointer {
+    position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
+    z-index: 10; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  }
+  canvas#wheel {
+    border-radius: 50%;
+    box-shadow: 0 8px 40px rgba(139,58,58,0.12), 0 2px 8px rgba(0,0,0,0.06);
+    display: block;
+  }
+  .spin-btn {
+    display: inline-block; font-family: var(--serif); font-size: 18px; font-style: italic;
+    color: var(--warm-white); background: var(--deep-rose); border: none;
+    padding: 14px 48px; border-radius: 2px; cursor: pointer;
+    letter-spacing: 0.05em; transition: background 0.2s, transform 0.15s;
+  }
+  .spin-btn:hover { background: var(--dusty-rose); transform: translateY(-1px); }
+  .spin-btn:active { transform: translateY(0) scale(0.98); }
+  .spin-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  /* ── RESULT MODAL ── */
+  .result-overlay {
+    position: fixed; inset: 0;
+    background: rgba(42,26,20,0.6); backdrop-filter: blur(6px);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 100; opacity: 0; pointer-events: none;
+    transition: opacity 0.4s; padding: 1rem;
+  }
+  .result-overlay.visible { opacity: 1; pointer-events: all; }
+  .result-card {
+    background: var(--warm-white); border-radius: 4px;
+    padding: 3.5rem 3rem; text-align: center; max-width: 440px; width: 100%;
+    position: relative; transform: translateY(30px);
+    transition: transform 0.4s; border-top: 3px solid var(--dusty-rose);
+  }
+  .result-overlay.visible .result-card { transform: translateY(0); }
+  .result-emoji { font-size: 40px; margin-bottom: 1rem; display: block; }
+  .result-card h3 {
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+  }
+  .result-amount {
+    font-family: var(--cursive);
+    font-size: 52px; color: var(--deep-rose); line-height: 1.1; margin-bottom: 0.4rem;
+  }
+  .result-sub {
+    font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem;
+  }
+  .result-note {
+    font-size: 17px; font-style: italic; color: var(--mid);
+    line-height: 1.7; margin-bottom: 2rem;
+  }
+  .result-close {
+    font-family: var(--sans); font-size: 9px; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--muted); cursor: pointer;
+    border: 0.5px solid var(--blush); padding: 10px 24px;
+    border-radius: 2px; background: none; transition: background 0.2s;
+  }
+  .result-close:hover { background: var(--blush-light); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    text-align: center; padding: 4rem 2rem 5rem;
+    font-size: 15px; font-style: italic; color: var(--muted);
+    border-top: 0.5px solid var(--blush);
+  }
+  .site-footer strong { color: var(--dusty-rose); font-weight: 400; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .memories-grid { grid-template-columns: repeat(2, 1fr); }
+    .memory-card:nth-child(3n+2), .memory-card:nth-child(5n+4) { margin-top: 0; }
+    canvas#wheel { width: 300px !important; height: 300px !important; }
+    .result-card { padding: 2.5rem 1.5rem; }
+    .tab-btn { padding: 10px 12px 12px; font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="petal-bg" id="petals"></div>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <p class="hero-eyebrow">May 25, 2026</p>
+  <h1 class="hero-title">Happy 29th Birthday<br><span>my dearest loveliest wife</span></h1>
+  <p class="hero-age">Twenty — Nine</p>
+  <p class="hero-message">
+    Every year with you is my favourite one yet.<br>
+    Here's to the girl who makes ordinary days feel like celebrations.
+  </p>
+  <div class="scroll-cue" onclick="document.getElementById('memories').scrollIntoView({behavior:'smooth'})">
+    scroll down
+  </div>
+</div>
+
+<!-- ── BIRTHDAY MEMORIES ── -->
+<section id="memories">
+<div class="section-wrap">
+  <p class="section-eyebrow">Your lovely birthday over the years</p>
+  <h2 class="section-title">With you, over the passing of time~</h2>
+
+  <!-- Tabs nav -->
+  <div class="tabs-nav" id="tabsNav">
+    <button class="tab-btn active" data-panel="24th">24th</button>
+    <button class="tab-btn" data-panel="25th">25th</button>
+    <button class="tab-btn" data-panel="26th">26th</button>
+    <button class="tab-btn" data-panel="27th">27th</button>
+    <button class="tab-btn" data-panel="28th">28th</button>
+    <button class="tab-btn special" data-panel="beyond">& Forever More ✦</button>
+  </div>
+
+  <div class="panels-container" id="panelsContainer">
+
+    <!-- 24th -->
+    <div class="tab-panel active" id="panel-24th">
+      <div class="memories-grid">
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 25th -->
+    <div class="tab-panel" id="panel-25th">
+      <div class="memories-grid">
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 26th -->
+    <div class="tab-panel" id="panel-26th">
+      <div class="memories-grid">
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 27th -->
+    <div class="tab-panel" id="panel-27th">
+      <div class="memories-grid">
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 28th -->
+    <div class="tab-panel" id="panel-28th">
+      <div class="memories-grid">
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+        <div class="memory-card">
+          <div class="memory-img-wrap">
+            <span class="placeholder-icon">📷</span>
+            <span class="placeholder-hint">Add photo</span>
+          </div>
+          <div class="memory-caption"><p class="label">Add caption</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- & Forever More -->
+    <div class="tab-panel" id="panel-beyond">
+      <div class="beyond-panel">
+        <div class="beyond-icon">🌹</div>
+        <p class="beyond-title">To forever, and everything in between</p>
+        <p class="beyond-message">
+          Every chapter we've written together has made me surer of one thing —
+          there is nowhere else I'd rather be than right here, beside you.<br><br>
+          Through every ordinary Tuesday and every milestone we've chased,
+          through the late nights and the laughter and the moments that asked
+          more of us than we expected — you showed up, fully and beautifully.<br><br>
+          Thank you for being my constant, my comfort, and my favourite person
+          to do life with. This journey of ours? It's only just beginning.
+          And I intend to spend every birthday of yours reminding you
+          just how deeply, endlessly loved you are.<br><br>
+          Here's to all the years still ahead — may we fill them with more
+          memories, more adventures, and more cai fan 🍚
+        </p>
+        <p class="beyond-signature">— Always yours, Jing ✦</p>
+      </div>
+    </div>
+
+  </div><!-- /panels-container -->
+</div>
+</section>
+
+<div class="ornament-divider"><span>✦</span></div>
+
+<!-- ── WHEEL SECTION ── -->
+<section id="gift">
+<div class="section-wrap" style="text-align:center; padding-top:5rem; padding-bottom:6rem;">
+  <p class="section-eyebrow">A gift for my beloved</p>
+  <h2 class="section-title">Spin to reveal</h2>
+  <p class="gift-intro">
+    Definitely not a biased spin wheel!
+  </p>
+
+  <div class="wheel-container">
+    <svg class="wheel-pointer" width="28" height="28" viewBox="0 0 28 28">
+      <polygon points="14,0 26,26 14,19 2,26" fill="#8b3a3a" stroke="#fdf8f2" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+    <canvas id="wheel" width="420" height="420"></canvas>
+  </div>
+
+  <br>
+  <button class="spin-btn" id="spinBtn" onclick="spinWheel()">Spin the wheel</button>
+</div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <p>A cute website for my darling's 29th 🌹</p>
+  <p style="margin-top:0.5rem; font-size:13px;">May 25, 2026</p>
+</footer>
+
+<!-- ── RESULT MODAL ── -->
+<div class="result-overlay" id="resultOverlay">
+  <div class="result-card">
+    <span class="result-emoji" id="resultEmoji">🎉</span>
+    <h3 id="resultTitle">your gift is</h3>
+    <p class="result-amount" id="resultAmount">Buying anything you'd like during KL shopping today!</p>
+    <p class="result-sub" id="resultSub" style="display:none"></p>
+    <p class="result-note" id="resultNote">
+      This is definitely not biased!<br>Happy Birthday my little bunny 🌹
+    </p>
+    <p style="font-family:var(--serif); font-size:18px; font-style:italic; color:var(--dusty-rose); margin-bottom:2rem;">
+      Let's shop till we drop!
+    </p>
+    <button class="result-close" onclick="document.getElementById('resultOverlay').classList.remove('visible')">
+      Close ✦
+    </button>
+  </div>
+</div>
+
+<script>
+/* ── Falling petals ── */
+(function() {
+  const container = document.getElementById('petals');
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.style.cssText = `
+      left: ${Math.random() * 100}%;
+      animation-duration: ${8 + Math.random() * 12}s;
+      animation-delay: ${Math.random() * 10}s;
+      width: ${4 + Math.random() * 5}px;
+      height: ${7 + Math.random() * 7}px;
+      opacity: 0;
+      background: hsl(${5 + Math.random()*15}deg, ${40+Math.random()*30}%, ${75+Math.random()*15}%);
+    `;
+    container.appendChild(p);
+  }
+})();
+
+/* ── Tab transitions ── */
+function spawnSparkles(x, y) {
+  const emojis = ['✨','🌸','💫','🌹','⭐'];
+  for (let i = 0; i < 7; i++) {
+    const el = document.createElement('div');
+    el.className = 'sparkle';
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    const angle = (Math.PI * 2 / 7) * i;
+    const dist = 50 + Math.random() * 50;
+    el.style.cssText = `
+      left: ${x}px; top: ${y}px;
+      --tx: ${Math.cos(angle) * dist}px;
+      --ty: ${Math.sin(angle) * dist}px;
+      animation-delay: ${Math.random() * 0.1}s;
+    `;
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 800);
+  }
+}
+
+function flashShimmer() {
+  const el = document.createElement('div');
+  el.className = 'tab-shimmer';
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 600);
+}
+
+document.getElementById('tabsNav').addEventListener('click', function(e) {
+  const btn = e.target.closest('.tab-btn');
+  if (!btn) return;
+  const newPanel = btn.dataset.panel;
+  const currentActive = document.querySelector('.tab-panel.active');
+  const nextPanel = document.getElementById('panel-' + newPanel);
+  if (!nextPanel || currentActive === nextPanel) return;
+
+  // Sparkles at click point
+  const rect = btn.getBoundingClientRect();
+  spawnSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2);
+  flashShimmer();
+
+  // Update button states
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Swap active panel - CSS transitions handle the animation
+  currentActive.classList.remove('active');
+  nextPanel.classList.add('active');
+});
+
+/* ── Wheel ── */
+const SEGMENTS = [
+  { label: '?', reveal: 'No Presents\nThis Year!',         color: '#e8ddd5', textColor: '#1a1a1a', isGift: false },
+  { label: '?', reveal: 'KL Shopping\nVoucher RM 2,988',   color: '#8b3a3a', textColor: '#ffffff', isGift: true  },
+  { label: '?', reveal: '1x Cai Fan\nWith Fish!',          color: '#f5e6d0', textColor: '#1a1a1a', isGift: false },
+  { label: '?', reveal: 'No Presents\nThis Year!',         color: '#e8ddd5', textColor: '#1a1a1a', isGift: false },
+  { label: '?', reveal: 'A Trip\nTo Ipoh!',                color: '#f0d4cc', textColor: '#1a1a1a', isGift: false },
+  { label: '?', reveal: 'No Presents\nThis Year!',         color: '#e8ddd5', textColor: '#1a1a1a', isGift: false },
+  { label: '?', reveal: '1 Year Supply\nOf Milo!',         color: '#dde8d5', textColor: '#1a1a1a', isGift: false },
+  { label: '?', reveal: 'No Presents\nThis Year!',         color: '#f0d4cc', textColor: '#1a1a1a', isGift: false },
+];
+
+const GIFT_INDEX = 1;
+const NUM = SEGMENTS.length;
+const ARC = (2 * Math.PI) / NUM;
+const canvas = document.getElementById('wheel');
+const ctx = canvas.getContext('2d');
+let angle = 0;
+let spinning = false;
+
+function drawWheel(rot, showRevealed) {
+  const cx = canvas.width / 2, cy = canvas.height / 2, r = cx - 12;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Outer rings
+  ctx.beginPath(); ctx.arc(cx, cy, r + 7, 0, 2 * Math.PI);
+  ctx.fillStyle = '#c9857a'; ctx.fill();
+  ctx.beginPath(); ctx.arc(cx, cy, r + 3, 0, 2 * Math.PI);
+  ctx.fillStyle = '#fdf8f2'; ctx.fill();
+
+  SEGMENTS.forEach((seg, i) => {
+    const start = rot + i * ARC;
+    const end = start + ARC;
+
+    ctx.beginPath(); ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, r, start, end); ctx.closePath();
+    ctx.fillStyle = seg.color; ctx.fill();
+    ctx.strokeStyle = '#fdf8f2'; ctx.lineWidth = 1.5; ctx.stroke();
+
+    const textToShow = (showRevealed && seg.reveal) ? seg.reveal : seg.label;
+    const lines = textToShow.split('\n');
+
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(start + ARC / 2);
+    ctx.textAlign = 'right';
+    ctx.fillStyle = seg.textColor;
+
+    if (showRevealed) {
+      const fontSize = seg.isGift ? 15 : 14;
+      ctx.font = seg.isGift
+        ? `600 ${fontSize}px 'Cormorant Garamond', serif`
+        : `400 ${fontSize}px 'Cormorant Garamond', serif`;
+      const lineH = fontSize + 4;
+      const totalH = lines.length * lineH;
+      lines.forEach((line, li) => {
+        ctx.fillText(line, r - 16, -totalH / 2 + li * lineH + lineH / 2);
+      });
+    } else {
+      ctx.font = `300 22px 'Cormorant Garamond', serif`;
+      ctx.fillText(textToShow, r - 28, 7);
+    }
+    ctx.restore();
+  });
+
+  // Centre cap
+  ctx.beginPath(); ctx.arc(cx, cy, 26, 0, 2 * Math.PI);
+  ctx.fillStyle = '#8b3a3a'; ctx.fill();
+  ctx.strokeStyle = '#fdf8f2'; ctx.lineWidth = 2; ctx.stroke();
+  ctx.fillStyle = '#fdf8f2';
+  ctx.font = "16px 'Cormorant Garamond', serif";
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.fillText('✦', cx, cy);
+}
+
+drawWheel(angle, false);
+
+function spinWheel() {
+  if (spinning) return;
+  spinning = true;
+  document.getElementById('spinBtn').disabled = true;
+
+  const extraSpins = (5 + Math.floor(Math.random() * 3)) * 2 * Math.PI;
+  const targetRot = (-Math.PI / 2) - (GIFT_INDEX * ARC + ARC / 2) + extraSpins;
+  const startAngle = angle;
+  const totalRotation = targetRot - (startAngle % (2 * Math.PI)) + 2 * Math.PI;
+  const finalAngle = startAngle + totalRotation;
+
+  const duration = 4800;
+  const start = performance.now();
+  function easeOut(t) { return 1 - Math.pow(1 - t, 4); }
+
+  function frame(now) {
+    const elapsed = now - start;
+    const t = Math.min(elapsed / duration, 1);
+    angle = startAngle + (finalAngle - startAngle) * easeOut(t);
+    drawWheel(angle, false);
+    if (t < 1) {
+      requestAnimationFrame(frame);
+    } else {
+      angle = finalAngle;
+      setTimeout(() => {
+        drawWheel(angle, true);
+        setTimeout(showResult, 700);
+      }, 350);
+      spinning = false;
+    }
+  }
+  requestAnimationFrame(frame);
+}
+
+function showResult() {
+  document.getElementById('resultOverlay').classList.add('visible');
+}
+</script>
+</body>
+</html>
