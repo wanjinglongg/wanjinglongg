@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Birthday Card – Ejean 🌹</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Instrument+Sans:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #fdf8f2;
+    --blush: #f0d4cc;
+    --blush-light: #faeae4;
+    --dusty-rose: #c9857a;
+    --deep-rose: #8b3a3a;
+    --gold: #b8945a;
+    --dark: #2a1a14;
+    --mid: #7a5a4a;
+    --muted: #b09080;
+    --cursive: 'Dancing Script', cursive;
+    --serif: 'Cormorant Garamond', serif;
+    --sans: 'Instrument Sans', sans-serif;
+  }
+
+  body {
+    background: #e8e0d8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 1rem;
+    font-family: var(--serif);
+  }
+
+  .print-note {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6a5a50;
+    text-align: center;
+  }
+
+  /* ── CARD ── */
+  .card {
+    width: 620px;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.12);
+  }
+
+  /* Blush gradient top strip */
+  .card-top-strip {
+    height: 6px;
+    background: linear-gradient(to right, var(--blush), var(--dusty-rose), var(--blush));
+  }
+
+  .card-inner {
+    margin: 12px;
+    border: 1px solid #ddd0c0;
+    padding: 3rem 3.5rem 2.8rem;
+    position: relative;
+  }
+
+  /* Corner ornaments */
+  .corner-svg {
+    position: absolute;
+    width: 44px; height: 44px;
+    opacity: 0.28;
+  }
+  .c-tl { top: 12px; left: 12px; }
+  .c-tr { top: 12px; right: 12px; transform: scaleX(-1); }
+  .c-bl { bottom: 12px; left: 12px; transform: scaleY(-1); }
+  .c-br { bottom: 12px; right: 12px; transform: scale(-1); }
+
+  /* Rose watermarks */
+  .rose-mark {
+    position: absolute;
+    bottom: 40px; right: 40px;
+    font-size: 110px; opacity: 0.045;
+    line-height: 1; pointer-events: none; user-select: none;
+  }
+  .rose-mark-2 {
+    position: absolute;
+    top: 60px; left: 30px;
+    font-size: 60px; opacity: 0.03;
+    line-height: 1; pointer-events: none; user-select: none;
+    transform: rotate(-20deg);
+  }
+
+  /* Main title */
+  .main-title {
+    font-family: var(--cursive);
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.5;
+    margin-bottom: 0.3rem;
+  }
+  .main-title .name {
+    color: var(--dusty-rose);
+    font-size: 50px;
+    font-weight: 400;
+    display: block;
+  }
+
+  .crime-note {
+    font-family: var(--sans);
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 1.8rem;
+    margin-top: 2px;
+  }
+
+  .subtitle {
+    font-family: var(--sans);
+    font-size: 8.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+
+  .rule {
+    width: 56px; height: 0.5px;
+    background: var(--gold);
+    margin-bottom: 1.8rem;
+  }
+
+  .message {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--mid);
+    line-height: 1.9;
+    max-width: 310px;
+    margin-bottom: 2.2rem;
+  }
+
+  .rule-h {
+    width: 100%; height: 0.5px;
+    background: #ddd0c0;
+    margin-bottom: 1.6rem;
+  }
+
+  .bottom-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .from-label {
+    font-family: var(--sans);
+    font-size: 7.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .from-name {
+    font-family: var(--cursive);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .from-sub {
+    font-family: var(--sans);
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+
+  .qr-block {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 8px;
+  }
+  .qr-wrap {
+    width: 104px; height: 104px;
+    background: white; padding: 7px;
+    border: 0.5px solid #e0cfc0;
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  #qrcode canvas, #qrcode img {
+    width: 90px !important; height: 90px !important;
+  }
+  .qr-label {
+    font-family: var(--sans);
+    font-size: 7.5px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  /* Print styles */
+  @media print {
+    body { background: white; padding: 0; }
+    .print-note { display: none; }
+    .card { box-shadow: none; }
+    @page { size: A5 landscape; margin: 10mm; }
+  }
+
+  @media (max-width: 660px) {
+    .card { width: 100%; }
+    .card-inner { padding: 2rem; }
+    .bottom-row { flex-direction: column; align-items: flex-start; }
+    .main-title { font-size: 36px; }
+    .main-title .name { font-size: 42px; }
+  }
+</style>
+</head>
+<body>
+
+<p class="print-note">Print this page · A5 landscape recommended</p>
+
+<div class="card">
+  <div class="card-top-strip"></div>
+  <div class="card-inner">
+
+    <!-- Corner ornaments -->
+    <svg class="corner-svg c-tl" viewBox="0 0 44 44" fill="none">
+      <path d="M3 41 L3 3 L41 3" stroke="#8b6040" stroke-width="0.8"/>
+      <path d="M8 41 L8 8 L41 8" stroke="#8b6040" stroke-width="0.4" opacity="0.5"/>
+      <circle cx="3" cy="3" r="2" fill="#8b6040" opacity="0.7"/>
+    </svg>
+    <svg class="corner-svg c-tr" viewBox="0 0 44 44" fill="none">
+      <path d="M3 41 L3 3 L41 3" stroke="#8b6040" stroke-width="0.8"/>
+      <path d="M8 41 L8 8 L41 8" stroke="#8b6040" stroke-width="0.4" opacity="0.5"/>
+      <circle cx="3" cy="3" r="2" fill="#8b6040" opacity="0.7"/>
+    </svg>
+    <svg class="corner-svg c-bl" viewBox="0 0 44 44" fill="none">
+      <path d="M3 41 L3 3 L41 3" stroke="#8b6040" stroke-width="0.8"/>
+      <path d="M8 41 L8 8 L41 8" stroke="#8b6040" stroke-width="0.4" opacity="0.5"/>
+      <circle cx="3" cy="3" r="2" fill="#8b6040" opacity="0.7"/>
+    </svg>
+    <svg class="corner-svg c-br" viewBox="0 0 44 44" fill="none">
+      <path d="M3 41 L3 3 L41 3" stroke="#8b6040" stroke-width="0.8"/>
+      <path d="M8 41 L8 8 L41 8" stroke="#8b6040" stroke-width="0.4" opacity="0.5"/>
+      <circle cx="3" cy="3" r="2" fill="#8b6040" opacity="0.7"/>
+    </svg>
+
+    <div class="rose-mark">🌹</div>
+    <div class="rose-mark-2">🌸</div>
+
+    <!-- Main heading -->
+    <h1 class="main-title">
+      Happy Birthday to the Love of my Life,<br>
+      my dearest wife <span class="name">Ejean</span>
+    </h1>
+    <p class="crime-note">My lovely milo lady!</p>
+
+    <p class="subtitle">Twenty-Nine · May 25, 2026</p>
+    <div class="rule"></div>
+
+    <p class="message">
+      Scan the bottom for the<br>
+      rest of the Birthday card! 🌹
+    </p>
+
+    <div class="rule-h"></div>
+
+    <div class="bottom-row">
+      <div class="left-col">
+        <p class="from-label">With love from</p>
+        <p class="from-name">Your one and only Husband<br><span style="color:var(--dusty-rose);">Jing Long</span></p>
+        <p class="from-sub">
+          Scan the QR code<br>
+          for the full birthday card
+        </p>
+      </div>
+
+      <div class="qr-block">
+        <div class="qr-wrap">
+          <div id="qrcode"></div>
+        </div>
+        <p class="qr-label">Scan me ✦</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<p class="print-note" style="margin-top:0.5rem">Ready to print — QR links to the birthday site</p>
+
+<script>
+  const GIFT_URL = "https://wanjinglongg.github.io/wanjinglongg/Ejean_29/";
+
+  new QRCode(document.getElementById("qrcode"), {
+    text: GIFT_URL,
+    width: 90,
+    height: 90,
+    colorDark: "#2a1a14",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.M
+  });
+</script>
+</body>
+</html>
