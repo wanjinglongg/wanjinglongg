@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JL & YJ Wedding — Planning Hub</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">JL <em>&amp;</em> YJ &nbsp;·&nbsp; Nov 2026</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="finances.html">Finances</a></li>
+      <li><a href="guodali.html">Guo Da Li</a></li>
+      <li><a href="wedding.html">Wedding Day</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Countdown banner -->
+<div class="countdown-banner">
+  <div class="label">Counting down to the big day — 22 November 2026</div>
+  <div class="countdown-items" id="countdown-wedding">
+    <div class="countdown-item"><span class="num">—</span><span class="unit">Days</span></div>
+  </div>
+</div>
+
+<div class="page-container">
+
+  <header class="page-header">
+    <p class="eyebrow">Wedding Planning Hub</p>
+    <h1>JL &amp; YJ</h1>
+    <span class="ornament">— &nbsp; — &nbsp; —</span>
+    <p>Guo Da Li · 20 Nov 2026 &nbsp;|&nbsp; Wedding · 22 Nov 2026 · M Roof Hotel, Ipoh</p>
+  </header>
+
+  <!-- Overall progress -->
+  <div class="progress-summary" data-progress-group="all">
+    <h4>Overall Planning Progress</h4>
+    <div class="progress-bar-outer">
+      <div class="progress-bar-fill" style="width:0%"></div>
+    </div>
+    <div class="progress-labels">
+      <span class="progress-done">— tasks done</span>
+      <span class="progress-pct">—</span>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div data-tabgroup="home">
+    <div class="tab-nav">
+      <button class="tab-btn" data-tab="tab-todo">To-Do List</button>
+      <button class="tab-btn" data-tab="tab-vendors">Vendors</button>
+      <button class="tab-btn" data-tab="tab-timeline">Timeline</button>
+    </div>
+
+    <!-- ═══ TAB 1: TO-DO ═══ -->
+    <div id="tab-todo" class="tab-content">
+
+      <div class="todo-container">
+
+        <!-- ── OVERDUE ── -->
+        <div class="date-section">
+          <div class="date-section-header">
+            <span class="date-label overdue-label">Overdue</span>
+            <div class="line"></div>
+            <span class="overdue-count">5 items past deadline</span>
+          </div>
+          <ul class="checklist">
+            <li>
+              <input type="checkbox" id="chk-guestlist">
+              <div class="item-body">
+                <span class="item-label">Finalise guest list</span>
+                <span class="item-detail">Confirm all tables — invite at least 10 months in advance</span>
+              </div>
+              <span class="cat-tag cat-wedding">Wedding</span>
+              <span class="item-due overdue">Oct 2025</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-invitation">
+              <div class="item-body">
+                <span class="item-label">Prepare &amp; send e-invitations</span>
+                <span class="item-detail">Design and dispatch digital invites to all guests</span>
+              </div>
+              <span class="cat-tag cat-wedding">Wedding</span>
+              <span class="item-due overdue">Dec 2025</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-flow">
+              <div class="item-body">
+                <span class="item-label">Plan wedding programme &amp; flow</span>
+                <span class="item-detail">Full run-down — entrance, toasts, dance, table rounds. Share with MC Eileen.</span>
+              </div>
+              <span class="cat-tag cat-wedding">Wedding</span>
+              <span class="item-due overdue">Feb 2026</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-gdl-items">
+              <div class="item-body">
+                <span class="item-label">Finalise all Guo Da Li items &amp; quantities</span>
+                <span class="item-detail">Confirm with both families. See Guo Da Li page for full list.</span>
+              </div>
+              <span class="cat-tag cat-gdl">Guo Da Li</span>
+              <span class="item-due overdue">Apr 2026</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-gdl-plan">
+              <div class="item-body">
+                <span class="item-label">Plan Guo Da Li day schedule</span>
+                <span class="item-detail">Confirm timing, venue (bride's family home in Ipoh), who attends from groom's side</span>
+              </div>
+              <span class="cat-tag cat-gdl">Guo Da Li</span>
+              <span class="item-due overdue">Apr 2026</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── JULY 2026 ── -->
+        <div class="date-section">
+          <div class="date-section-header">
+            <span class="date-label upcoming-label">July 2026</span>
+            <div class="line"></div>
+          </div>
+          <ul class="checklist">
+            <li>
+              <input type="checkbox" id="chk-flights">
+              <div class="item-body">
+                <span class="item-label">Book flights to Ipoh for couple &amp; families</span>
+                <span class="item-detail">SG → (JB or KL to collect gown) → Ipoh. Arrive by 19 Nov for Guo Da Li.</span>
+              </div>
+              <span class="cat-tag cat-logistics">Logistics</span>
+              <span class="item-due">Jul 2026</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-accommodation">
+              <div class="item-body">
+                <span class="item-label">Book family accommodation — large Airbnb, Ipoh</span>
+                <span class="item-detail">Budget RM 2,500 outstanding. Book early — large properties fill up fast.</span>
+              </div>
+              <span class="cat-tag cat-logistics">Logistics</span>
+              <span class="item-due">Jul 2026</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── AUGUST 2026 ── -->
+        <div class="date-section">
+          <div class="date-section-header">
+            <span class="date-label upcoming-label">August 2026</span>
+            <div class="line"></div>
+          </div>
+          <ul class="checklist">
+            <li>
+              <input type="checkbox" id="chk-vendors-venue">
+              <div class="item-body">
+                <span class="item-label">Arrange reception area entertainment vendors</span>
+                <span class="item-detail">Ice cream booth · Photo-taking booth · Live portrait painting · Games. Budget ~RM 3,500.</span>
+              </div>
+              <span class="cat-tag cat-venue">Venue</span>
+              <span class="item-due">Aug 2026</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-photobooth">
+              <div class="item-body">
+                <span class="item-label">Confirm &amp; pay Creativo Photobooth — RM 546</span>
+                <span class="item-detail">Confirm props, branding, and setup time with venue.</span>
+              </div>
+              <span class="cat-tag cat-venue">Venue</span>
+              <span class="item-due">Aug 2026</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-band">
+              <div class="item-body">
+                <span class="item-label">Find &amp; book band / live musician</span>
+                <span class="item-detail">Live music for cocktail hour and dinner. Popular acts book up fast.</span>
+              </div>
+              <span class="cat-tag cat-media">Activities</span>
+              <span class="item-due">Aug 2026</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── SEPTEMBER 2026 ── -->
+        <div class="date-section">
+          <div class="date-section-header">
+            <span class="date-label upcoming-label">September 2026</span>
+            <div class="line"></div>
+          </div>
+          <ul class="checklist">
+            <li>
+              <input type="checkbox" id="chk-gown-pick">
+              <div class="item-body">
+                <span class="item-label">Try on &amp; finalise gown selection — Gelly Wee</span>
+                <span class="item-detail">Book fitting appointment. Confirm alterations and collection logistics.</span>
+              </div>
+              <span class="cat-tag cat-clothing">Clothing</span>
+              <span class="item-due">Sep 2026</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-gown-collect">
+              <div class="item-body">
+                <span class="item-label">Plan gown &amp; suit collection route from Gelly Wee</span>
+                <span class="item-detail">Confirm collection point (JB or KL). 7-day suit rental — collect by ~15 Nov 2026.</span>
+              </div>
+              <span class="cat-tag cat-logistics">Logistics</span>
+              <span class="item-due">Sep 2026</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-cake">
+              <div class="item-body">
+                <span class="item-label">Order wedding cake</span>
+                <span class="item-detail">Considering long-table display / dummy cake. Desserts already in dinner package.</span>
+              </div>
+              <span class="cat-tag cat-logistics">Logistics</span>
+              <span class="item-due">Sep 2026</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-videographer-room">
+              <div class="item-body">
+                <span class="item-label">Book hotel room for videographer team — Omelette Studio</span>
+                <span class="item-detail">1 room at M Roof Hotel required for their team. Coverage: 4 PM – 10 PM.</span>
+              </div>
+              <span class="cat-tag cat-media">Media</span>
+              <span class="item-due">Sep 2026</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-photographer-room">
+              <div class="item-body">
+                <span class="item-label">Book hotel room for photographer — Zac Chin</span>
+                <span class="item-detail">Confirm if Zac Chin requires accommodation at M Roof Hotel. Coverage: 4 PM – 10 PM.</span>
+              </div>
+              <span class="cat-tag cat-media">Media</span>
+              <span class="item-due">Sep 2026</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── OCTOBER 2026 ── -->
+        <div class="date-section">
+          <div class="date-section-header">
+            <span class="date-label upcoming-label">October 2026</span>
+            <div class="line"></div>
+          </div>
+          <ul class="checklist">
+            <li>
+              <input type="checkbox" id="chk-gdl-purchase">
+              <div class="item-body">
+                <span class="item-label">Purchase all Guo Da Li items</span>
+                <span class="item-detail">Betrothal gifts, 四点金 jewellery, 龙凤烛, pastries, fruits, ping jin envelopes</span>
+              </div>
+              <span class="cat-tag cat-gdl">Guo Da Li</span>
+              <span class="item-due">Oct 2026</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-video">
+              <div class="item-body">
+                <span class="item-label">Confirm wedding highlight video — Omelette Studio</span>
+                <span class="item-detail">Verify if highlight film is included in package, else arrange separately.</span>
+              </div>
+              <span class="cat-tag cat-media">Media</span>
+              <span class="item-due">Oct 2026</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-doorgift">
+              <div class="item-body">
+                <span class="item-label">Order door gifts</span>
+                <span class="item-detail">Style to align with decoration theme. Confirm quantity with final headcount.</span>
+              </div>
+              <span class="cat-tag cat-decor">Decoration</span>
+              <span class="item-due">Oct 2026</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── NOVEMBER 2026 ── -->
+        <div class="date-section">
+          <div class="date-section-header">
+            <span class="date-label upcoming-label">November 2026</span>
+            <div class="line"></div>
+          </div>
+          <ul class="checklist">
+            <li>
+              <input type="checkbox" id="chk-flowers">
+              <div class="item-body">
+                <span class="item-label">Order flowers for bridal walk-in</span>
+                <span class="item-detail">Bridal bouquet &amp; aisle flowers — align with Victoria Wedding decoration theme.</span>
+              </div>
+              <span class="cat-tag cat-decor">Decoration</span>
+              <span class="item-due">Nov 2026</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-dance">
+              <div class="item-body">
+                <span class="item-label">Couple's dance — performance ready</span>
+                <span class="item-detail">Start practice now. Daily sessions recommended in the final weeks.</span>
+              </div>
+              <span class="cat-tag cat-media">Activities</span>
+              <span class="item-due">1 Nov 2026</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-gown-deadline">
+              <div class="item-body">
+                <span class="item-label">Collect gown &amp; suit from Gelly Wee (travel to JB or KL)</span>
+                <span class="item-detail">7-day suit rental window — must collect by 15 Nov to cover 22 Nov wedding.</span>
+              </div>
+              <span class="cat-tag cat-logistics">Logistics</span>
+              <span class="item-due">By 15 Nov</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── CONFIRMED & DONE ── -->
+        <div class="date-section">
+          <div class="date-section-header">
+            <span class="date-label done-section-label">Confirmed &amp; Done</span>
+            <div class="line"></div>
+          </div>
+          <ul class="checklist">
+            <li>
+              <input type="checkbox" id="chk-gdl-date" data-default="done">
+              <div class="item-body">
+                <span class="item-label">Guo Da Li date confirmed — 20 November 2026, Ipoh</span>
+              </div>
+              <span class="cat-tag cat-gdl">Guo Da Li</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-wed-date" data-default="done">
+              <div class="item-body">
+                <span class="item-label">Wedding date confirmed — 22 November 2026, M Roof Hotel, Ipoh</span>
+              </div>
+              <span class="cat-tag cat-wedding">Wedding</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-venue" data-default="done">
+              <div class="item-body">
+                <span class="item-label">Wedding venue confirmed — M Roof Hotel, Ipoh</span>
+                <span class="item-detail">Deposit paid (Long Sing, RM 1,650). Balance outstanding.</span>
+              </div>
+              <span class="cat-tag cat-venue">Venue</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-decor" data-default="done">
+              <div class="item-body">
+                <span class="item-label">Decoration company confirmed — Victoria Wedding Decoration</span>
+                <span class="item-detail">Theme TBD — to be decided and confirmed with Victoria Wedding.</span>
+              </div>
+              <span class="cat-tag cat-decor">Decoration</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-coordinator" data-default="done">
+              <div class="item-body">
+                <span class="item-label">Wedding coordinator confirmed — Love &amp; Love Wedding &amp; Events</span>
+              </div>
+              <span class="cat-tag cat-wedding">Coordinator</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-lighting" data-default="done">
+              <div class="item-body">
+                <span class="item-label">Lighting engineer confirmed — Love &amp; Love Wedding &amp; Events</span>
+              </div>
+              <span class="cat-tag cat-wedding">Lighting</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-gown-rental" data-default="done">
+              <div class="item-body">
+                <span class="item-label">Gown rental confirmed — Gelly Wee</span>
+                <span class="item-detail">Collection point TBD (JB or KL)</span>
+              </div>
+              <span class="cat-tag cat-clothing">Clothing</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-suit" data-default="done">
+              <div class="item-body">
+                <span class="item-label">Suit rental confirmed — Gelly Wee (7-day rental)</span>
+              </div>
+              <span class="cat-tag cat-clothing">Clothing</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-makeup" data-default="done">
+              <div class="item-body">
+                <span class="item-label">Makeup artist confirmed — Min Min</span>
+                <span class="item-detail">Morning bridal + evening touch-up &amp; hairdo</span>
+              </div>
+              <span class="cat-tag cat-clothing">Makeup</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-mc" data-default="done">
+              <div class="item-body">
+                <span class="item-label">MC confirmed — Eileen</span>
+              </div>
+              <span class="cat-tag cat-media">Media</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-videographer" data-default="done">
+              <div class="item-body">
+                <span class="item-label">Videographer confirmed — Omelette Studio</span>
+                <span class="item-detail">Coverage: 4 PM – 10 PM (6-hour window)</span>
+              </div>
+              <span class="cat-tag cat-media">Media</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-photographer" data-default="done">
+              <div class="item-body">
+                <span class="item-label">Photographer confirmed — Zac Chin</span>
+                <span class="item-detail">Coverage: 4 PM – 10 PM (6-hour window)</span>
+              </div>
+              <span class="cat-tag cat-media">Media</span>
+            </li>
+            <li>
+              <input type="checkbox" id="chk-car" data-default="done">
+              <div class="item-body">
+                <span class="item-label">Bridal car confirmed — Uncle's Benz</span>
+                <span class="item-detail">Remember to prepare a generous angpao as appreciation</span>
+              </div>
+              <span class="cat-tag cat-logistics">Logistics</span>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /todo-container -->
+    </div><!-- /tab-todo -->
+
+    <!-- ═══ TAB 2: VENDORS ═══ -->
+    <div id="tab-vendors" class="tab-content">
+
+      <div class="notice">
+        <strong>Note:</strong> Vendors listed as TBD still need to be sourced and confirmed. Reach out early — popular vendors get booked quickly for Nov 2026.
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Vendor / Contact</th>
+              <th>Status</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Wedding Venue</strong></td>
+              <td>M Roof Hotel, Ipoh</td>
+              <td><span class="badge badge-done">Confirmed</span></td>
+              <td>Dinner reception on 22 Nov 2026. Deposit paid (Long Sing RM 1,650).</td>
+            </tr>
+            <tr>
+              <td><strong>Gown Rental</strong></td>
+              <td>Gelly Wee</td>
+              <td><span class="badge badge-done">Confirmed</span></td>
+              <td>Collection point TBD (JB or KL). Fitting appointment needed.</td>
+            </tr>
+            <tr>
+              <td><strong>Suit Rental</strong></td>
+              <td>Gelly Wee</td>
+              <td><span class="badge badge-done">Confirmed</span></td>
+              <td>7-day rental. Collect by ~15 Nov 2026.</td>
+            </tr>
+            <tr>
+              <td><strong>Makeup Artist</strong></td>
+              <td>Min Min</td>
+              <td><span class="badge badge-done">Confirmed</span></td>
+              <td>Morning bridal makeup + evening hairdo &amp; touch-up. Payment outstanding.</td>
+            </tr>
+            <tr>
+              <td><strong>MC</strong></td>
+              <td>Eileen</td>
+              <td><span class="badge badge-done">Confirmed</span></td>
+              <td>~RM 3,200 budget. Payment outstanding.</td>
+            </tr>
+            <tr>
+              <td><strong>Videographer</strong></td>
+              <td>Omelette Studio</td>
+              <td><span class="badge badge-done">Confirmed</span></td>
+              <td>~RM 9,000 budget. Coverage: 4 PM–10 PM (6-hr window). Need to book 1 hotel room for their team.</td>
+            </tr>
+            <tr>
+              <td><strong>Photographer</strong></td>
+              <td>Zac Chin</td>
+              <td><span class="badge badge-done">Confirmed</span></td>
+              <td>~RM 8,000 budget. Coverage: 4 PM–10 PM (6-hr window). Payment outstanding.</td>
+            </tr>
+            <tr>
+              <td><strong>Decoration</strong></td>
+              <td>Victoria Wedding Decoration</td>
+              <td><span class="badge badge-done">Confirmed</span></td>
+              <td>Budget ~RM 20,000. Theme TBD — to be finalised with bride's preference. Price quote needed.</td>
+            </tr>
+            <tr>
+              <td><strong>Photo Booth</strong></td>
+              <td>Creativo Photobooth</td>
+              <td><span class="badge badge-outstanding">Confirm &amp; Pay</span></td>
+              <td>RM 546 outstanding.</td>
+            </tr>
+            <tr>
+              <td><strong>Bridal Car</strong></td>
+              <td>Uncle's Benz</td>
+              <td><span class="badge badge-done">Confirmed</span></td>
+              <td>Prepare a generous angpao for uncle as appreciation.</td>
+            </tr>
+            <tr>
+              <td><strong>Band / Musician</strong></td>
+              <td class="muted">Not yet found</td>
+              <td><span class="badge badge-tbd">TBD</span></td>
+              <td>Live music to liven up the reception dinner.</td>
+            </tr>
+            <tr>
+              <td><strong>Coordinator</strong></td>
+              <td>Love &amp; Love Wedding &amp; Events</td>
+              <td><span class="badge badge-done">Confirmed</span></td>
+              <td>Day-of coordination with all vendors. Budget ~RM 6,000.</td>
+            </tr>
+            <tr>
+              <td><strong>Lighting Engineer</strong></td>
+              <td>Love &amp; Love Wedding &amp; Events</td>
+              <td><span class="badge badge-done">Confirmed</span></td>
+              <td>Lighting setup and operation during dinner. Budget ~RM 6,000.</td>
+            </tr>
+            <tr>
+              <td><strong>Entertainment Vendors</strong></td>
+              <td class="muted">Not yet found</td>
+              <td><span class="badge badge-tbd">TBD</span></td>
+              <td>Ice cream booth · Live portrait painting · Games. Budget ~RM 3,500.</td>
+            </tr>
+            <tr>
+              <td><strong>Accommodation</strong></td>
+              <td>Airbnb, Ipoh</td>
+              <td><span class="badge badge-outstanding">Book &amp; Pay</span></td>
+              <td>Large Airbnb for families. Budget RM 2,500 outstanding.</td>
+            </tr>
+            <tr>
+              <td><strong>Wedding Cake</strong></td>
+              <td class="muted">Not yet found</td>
+              <td><span class="badge badge-tbd">TBD</span></td>
+              <td>Considering long-table display cake (dummy). Desserts already in dinner package.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div><!-- /tab-vendors -->
+
+    <!-- ═══ TAB 3: TIMELINE ═══ -->
+    <div id="tab-timeline" class="tab-content">
+
+      <div class="notice">
+        <strong>Tip:</strong> Items marked with a gold dot are milestone dates. Overdue deadlines are flagged — action needed.
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot done"></div>
+          <div class="timeline-date">March 2025</div>
+          <div class="timeline-title">Wedding venue deposit paid — Long Sing / M Roof Hotel</div>
+          <div class="timeline-detail">RM 1,650 settled. Venue locked in.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot done"></div>
+          <div class="timeline-date">Mid 2025</div>
+          <div class="timeline-title">Key vendors confirmed — MC, Videographer, Photographer, Car</div>
+          <div class="timeline-detail">Eileen (MC) · Omelette Studio (video) · Zac Chin (photos) · Uncle's Benz · Gelly Wee (gown &amp; suit) · Min Min (makeup)</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Oct 2025 — OVERDUE</div>
+          <div class="timeline-title">Finalise guest list</div>
+          <div class="timeline-detail">Confirm all invitees — send invitations at least 10 months in advance.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Dec 2025 — OVERDUE</div>
+          <div class="timeline-title">Send e-invitations to all guests</div>
+          <div class="timeline-detail">Design and dispatch digital invites. Prepare early!</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">February 2026</div>
+          <div class="timeline-title">Finalise wedding programme &amp; flow</div>
+          <div class="timeline-detail">Detailed run-down for the dinner reception — share with MC Eileen.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">April 2026</div>
+          <div class="timeline-title">Confirm all Guo Da Li items &amp; day plan</div>
+          <div class="timeline-detail">Coordinate with both families. Confirm ping jin amount &amp; gift quantities.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">May–June 2026</div>
+          <div class="timeline-title">Confirm remaining vendor contracts &amp; deposits</div>
+          <div class="timeline-detail">Min Min (makeup) · MC fee · Creativo Photobooth (RM 546) · Victoria Decor quote</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">July 2026</div>
+          <div class="timeline-title">Book flights &amp; accommodation for families</div>
+          <div class="timeline-detail">SG → Ipoh flights for couple &amp; both families. Book large Airbnb in Ipoh (RM 2,500).</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">August 2026</div>
+          <div class="timeline-title">Finalise decoration theme, band &amp; reception entertainment</div>
+          <div class="timeline-detail">Victoria Decor contract · Live band · Ice cream booth · Portrait painting · Games</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">September 2026</div>
+          <div class="timeline-title">Gown fitting at Gelly Wee + Order wedding cake</div>
+          <div class="timeline-detail">Finalise gown selection. Confirm cake style (long-table display). Book hotel room for Omelette Studio team.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">October 2026</div>
+          <div class="timeline-title">Final preparations — door gifts, flowers, programme print</div>
+          <div class="timeline-detail">Order door gifts &amp; flowers. Confirm all vendors. Run final headcount.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">~15 November 2026</div>
+          <div class="timeline-title">Collect gown &amp; suit from Gelly Wee</div>
+          <div class="timeline-detail">Travel to JB or KL (TBD). 7-day suit rental window — must collect by 15 Nov to cover the 22 Nov wedding date.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot key"></div>
+          <div class="timeline-date">20 November 2026</div>
+          <div class="timeline-title">GUO DA LI — Ipoh</div>
+          <div class="timeline-detail">Traditional betrothal ceremony. Groom's family visits bride's family with gifts. Ping jin: RM 38,888.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot key"></div>
+          <div class="timeline-date">22 November 2026</div>
+          <div class="timeline-title">WEDDING DAY — M Roof Hotel, Ipoh</div>
+          <div class="timeline-detail">Afternoon tea ceremony · Evening dinner reception. The big day!</div>
+        </div>
+
+      </div>
+    </div><!-- /tab-timeline -->
+
+  </div><!-- /tabgroup home -->
+</div><!-- /page-container -->
+
+<footer class="footer">
+  <span class="footer-date">JL &amp; YJ &nbsp;·&nbsp; 22 November 2026</span>
+  <span>M Roof Hotel, Ipoh &nbsp;·&nbsp; Planning Hub</span>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
